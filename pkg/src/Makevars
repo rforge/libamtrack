@@ -1,0 +1,11 @@
+# Set by configure
+GSL_CFLAGS = -I/usr/include
+GSL_LIBS   = -L/usr/lib -lgsl -lgslcblas -lm
+CERNLIB_CFLAGS = -DHAVE_CERNLIB -DgFortran -Df2cFortran
+CERNLIB_LIBS = -lmathlib
+
+# Combine to standard arguments for R
+PKG_CPPFLAGS =  $(GSL_CFLAGS) $(CERNLIB_CFLAGS) -I. -DNDEBUG
+PKG_LIBS = $(GSL_LIBS) $(CERNLIB_LIBS)
+
+

@@ -1,4 +1,4 @@
-AC_INIT([libamtrack], 0.5.5)
+AC_INIT([src/AT_Algorithms_CPP.c])
 
 # Following lines kindly supplied by Dirk Eddelbuettel
 ## Use gsl-config to find arguments for compiler and linker flags

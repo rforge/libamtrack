@@ -12,13 +12,12 @@
   \item{beta}{ relativistic speed, between 0 and 1.}
 }
 \value{
-% TODO proper return definition of lists!!! ADD NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
+% TODO proper return definition of lists!!! ADD
+% NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
   \item{density}{ resulting density (array of size n)}
 }
 \seealso{
 View the C source code here:
-
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLoss.c#L32}
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
+ss.c#L32}
 }
-
-

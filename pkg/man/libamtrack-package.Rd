@@ -20,8 +20,8 @@ Please note that libamtrack is still under heavy development and so is the R
 \details{
 \tabular{ll}{
 Package: \tab libamtrack\cr
-Version: \tab 0.5.5 (Violet Wombat)\cr
-Date: \tab 2014-07-07\cr
+Version: \tab 0.6.0 (Black Armadillo)\cr
+Date: \tab 2014-07-09\cr
 Depends: \tab R (>= 2.12.0)\cr
 Suggests: \tab lattice\cr
 SystemRequirements: \tab gsl (optinally: cernlib to enable energy loss

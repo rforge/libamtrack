@@ -10,12 +10,13 @@
   \item{red.Theta}{ reduced angle variable.}
 }
 \value{
-% TODO proper return definition of lists!!! ADD
-% NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
+% TODO proper return definition of lists!!! ADD NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
   \item{second}{second}
 }
 \seealso{
 View the C source code here:
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_Multiple
-CoulombScattering.c#L231}
+
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_MultipleCoulombScattering.c#L231}
 }
+
+

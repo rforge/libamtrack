@@ -9,8 +9,6 @@ export(
 	"AT.CPPSC.alpha.and.beta",
 	"AT.CSDA.energy.after.slab.E.MeV.u",
 	"AT.CSDA.range.Bethe.g.cm2",
-	"AT.CSDA.range.g.cm2",
-	"AT.CSDA.range.m",
 	"AT.D.RDD.Gy",
 	"AT.E.MeV.u.from.momentum.MeV.c.u",
 	"AT.E.from.beta",

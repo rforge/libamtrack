@@ -21,7 +21,7 @@
 \seealso{
 View the C source code here:
 
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsRoutines.c#L371}
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsRoutines.c#L383}
 }
 \examples{
 # Technical parameters for a double Gaussian beam
@@ -31,7 +31,7 @@ AT.beam.par.physical.to.technical(  fluence.cm2 = AT.fluence.cm2.from.dose.Gy( E
                                                                                D.Gy         = 1.0, 
                                                                                particle.no  = AT.particle.no.from.particle.name("12C"), 
                                                                                material.no  = AT.material.no.from.material.name("Water, Liquid"),
-                                                                               stopping.power.source.no = 0), 
+                                                                               stopping.power.source.no = 2), 
                                     sigma.cm    = 0.5)
 }
 

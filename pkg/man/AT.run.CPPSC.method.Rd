@@ -66,7 +66,7 @@ AT.run.CPPSC.method( particle.no                          = c(6012, 1001, 1001),
                      shrink.tails.under                   = 1e-30,                       # ... they contribute less then 1e-30 to first moment of histogram
                      adjust.N2                            = TRUE,                        # perform rebinning if local dose distribution becomes too narrow
                      lethal.events.mode                   = FALSE,                       # use independent subtargets
-                     stopping.power.source.no             = 0)                      
+                     stopping.power.source.no             = 2)                      
 }
 
 

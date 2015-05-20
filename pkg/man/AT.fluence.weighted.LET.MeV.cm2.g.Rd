@@ -20,7 +20,7 @@
 \seealso{
 View the C source code here:
 
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsRoutines.c#L574}
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsRoutines.c#L591}
 }
 \examples{
 # fluence- and dose-weighted LET for a simple mixed field
@@ -29,12 +29,12 @@ AT.fluence.weighted.LET.MeV.cm2.g( E.MeV.u       = c(100, 5),
                                    particle.no   = c(1001, 1001),
                                    fluence.cm2   = c(99e8, 1e8), 
                                    material.no   = 1,                   # water
-                                   stopping.power.source.no = 0)              
+                                   stopping.power.source.no = 2)              
 AT.dose.weighted.LET.MeV.cm2.g( E.MeV.u       = c(100, 5),
                                 particle.no   = c(1001, 1001),
                                   fluence.cm2   = c(99e8, 1e8), 
                                 material.no   = 1,                   # water
-                                   stopping.power.source.no = 0)              
+                                   stopping.power.source.no = 2)              
 }
 
 

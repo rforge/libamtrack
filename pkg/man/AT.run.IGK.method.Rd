@@ -52,7 +52,7 @@ AT.run.IGK.method( particle.no                          = 1001,                 
                    gamma.parameters                     = c(1,500,1,1,0),              # ...as exponential saturation with characteristic dose 500 Gy
                    saturation.cross.section.factor      = 1.4,                         # factor to take 'brush' around track into account
                    write.output                         = TRUE,                        # write a log file
-                   stopping.power.source.no             = 0)                      
+                   stopping.power.source.no             = 2)                      
 }
 
 

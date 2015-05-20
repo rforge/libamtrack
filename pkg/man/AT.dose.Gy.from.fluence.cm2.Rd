@@ -28,7 +28,7 @@ AT.dose.Gy.from.fluence.cm2( E.MeV.u      = c(10, 10, 10, 10),
                              fluence.cm2  = c(1e7, 1e7, 1e7, 1e7),
                              particle.no  = c(1001, 2003, 6012, 8016),
                              material.no  = 7,
-                             stopping.power.source.no = 0)
+                             stopping.power.source.no = 2)
 }
 
 

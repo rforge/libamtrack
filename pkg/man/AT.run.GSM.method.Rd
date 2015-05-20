@@ -80,7 +80,7 @@ AT.run.GSM.method( # protons
                    # use independent subtargets
                    lethal.events.mode                   = FALSE,
                    # and PSTAR stopping powers
-                   stopping.power.source.no             = 0)                      
+                   stopping.power.source.no             = 2)                      
 }
 
 

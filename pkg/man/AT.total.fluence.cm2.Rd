@@ -20,7 +20,7 @@
 \seealso{
 View the C source code here:
 
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsRoutines.c#L485}
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsRoutines.c#L502}
 }
 \examples{
 # Compute total fluence in a 
@@ -31,7 +31,7 @@ AT.total.fluence.cm2( E.MeV.u     = c(100, 5),
                       particle.no = c(1001, 1001), 
                       D.Gy        = c(1, 1), 
                       material.no = 1,
-                      stopping.power.source.no = 0)
+                      stopping.power.source.no = 2)
 }
 
 

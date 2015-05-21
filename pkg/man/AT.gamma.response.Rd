@@ -9,25 +9,29 @@
 \arguments{
   \item{d.Gy}{ doses in Gy (array of size number.of.doses).}
   \item{gamma.model}{ gamma response model index.}
-  \item{gamma.parameter}{ vector holding necessary parameters for the chose gamma response model (array of size 9).}
+  \item{gamma.parameter}{ vector holding necessary parameters for the chose
+ gamma response model (array of size 9).}
   \item{lethal.event.mode}{ if true computation is done in lethal event mode.}
 }
 \value{
-% TODO proper return definition of lists!!! ADD NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
+% TODO proper return definition of lists!!! ADD
+% NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
   \item{S}{ gamma responses (array of size number.of.doses)}
 }
 \examples{
-# Show the gamma response of two Al2O3 detectors (A & B) and two protocols ('peak' and 'total')
-# parametrized in two components (single hit/single target and two hit/single target)
+
+# Show the gamma response of two Al2O3 detectors (A & B) and two protocols
+# ('peak' and 'total')
+
+# parametrized in two components (single hit/single target and two hit/single
+# target)
 # as measured and published by Edmund et al., NIM B 262 (2007), 261-275
-
 require(lattice)
-
 # Compute 100 points between 0.1 and 25 Gy
 # General hit/target model
-d.Gy                    <- 10^seq(from = log10(0.1), to = log10(25), length.out = 100)     
+d.Gy                    <- 10^seq(from = log10(0.1), to = log10(25),
+ length.out = 100)     
 gamma.model		<- 2
-
 # Probe A, 'peak'
 R			<- 1
 Smax			<- 0.81e6
@@ -36,7 +40,6 @@ k2			<- Smax * (1 - R / 100)
 gamma.parameter.peak.A	<- c( k1 = k1, D01 = 0.36, c1 = 1, m1 = 1,
 			      k2 = k2, D02 = 3.06, c2 = 2, m2 = 1,
 			      0)
-
 # Probe A, 'total'
 R			<- 33
 Smax			<- 6.2e6
@@ -45,7 +48,6 @@ k2			<- Smax * (1 - R / 100)
 gamma.parameter.total.A	<- c( k1 = k1, D01 = 1.13, c1 = 1, m1 = 1,
 			      k2 = k2, D02 = 1.77, c2 = 2, m2 = 1,
 			      0)
-
 # Probe B, 'peak'
 R			<- 13 
 Smax			<- 2.84e6
@@ -54,7 +56,6 @@ k2			<- Smax * (1 - R / 100)
 gamma.parameter.peak.B	<- c( k1 = k1, D01 = 4.15, c1 = 1, m1 = 1,
 			      k2 = k2, D02 = 5.14, c2 = 2, m2 = 1,
 			      0)
-
 # Probe B, 'total'
 R			<- 44
 Smax			<- 27.6e6
@@ -63,7 +64,6 @@ k2			<- Smax * (1 - R / 100)
 gamma.parameter.total.B	<- c( k1 = k1, D01 = 2.90, c1 = 1, m1 = 1,
 			      k2 = k2, D02 = 4.66, c2 = 2, m2 = 1,
 			      0)
-
 vecA <- AT.gamma.response( d.Gy              = d.Gy,
 			   gamma.model       = gamma.model,
 			   gamma.parameter   = gamma.parameter.peak.A,
@@ -80,7 +80,6 @@ vecD <- AT.gamma.response( d.Gy              = d.Gy,
 			   gamma.model       = gamma.model,
 			   gamma.parameter   = gamma.parameter.total.B,
                            lethal.event.mode = FALSE)$response
-
 # Compose data frame
 df   <- data.frame( d.Gy    = rep( d.Gy, 4), 
 		    S       = c(vecA, vecB, vecC, vecD ),

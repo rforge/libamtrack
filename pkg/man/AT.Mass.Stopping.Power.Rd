@@ -40,8 +40,8 @@
 }
 \seealso{
 View the C source code here:
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_Stopping
-Power.c#L39}
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/tags/0.6.1/src/AT_Sto
+ppingPower.c#L39}
 }
 \examples{
 # Use stopping power data from Bethe equation

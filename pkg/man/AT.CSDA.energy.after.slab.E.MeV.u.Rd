@@ -24,6 +24,6 @@
 }
 \seealso{
 View the C source code here:
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_DataRang
-e.c#L160}
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/tags/0.6.1/src/AT_Dat
+aRange.c#L160}
 }

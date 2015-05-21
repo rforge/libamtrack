@@ -2,10 +2,10 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Cryptonym to faciliate versioning for users */
-#define CODE_NAME "Blue Armadillo"
+/* #undef CODE_NAME */
 
 /* Status of the code */
-#define CODE_STATUS "Development"
+/* #undef CODE_STATUS */
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
@@ -85,28 +85,28 @@
 #define PACKAGE "libamtrack"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "s.greilich@dkfz.de"
+/* #undef PACKAGE_BUGREPORT */
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "libamtrack"
+/* #undef PACKAGE_NAME */
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "libamtrack 0.6.1"
+/* #undef PACKAGE_STRING */
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "libamtrack"
+/* #undef PACKAGE_TARNAME */
 
 /* Define to the home page for this package. */
-#define PACKAGE_URL ""
+/* #undef PACKAGE_URL */
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.6.1"
+/* #undef PACKAGE_VERSION */
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
 
 /* repository svn version */
-#define SVN_VERSION "1335:1350M"
+#define SVN_VERSION "1335:1357M"
 
 /* Version number of package */
 #define VERSION "0.6.1"

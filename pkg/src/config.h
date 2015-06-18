@@ -19,9 +19,6 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
-/* Define to 1 if you have the `mathlib' library (-lmathlib). */
-#define HAVE_LIBMATHLIB 1
-
 /* Define to 1 if you have the <malloc.h> header file. */
 #define HAVE_MALLOC_H 1
 
@@ -106,7 +103,7 @@
 #define STDC_HEADERS 1
 
 /* repository svn version */
-#define SVN_VERSION "1335:1361M"
+#define SVN_VERSION "1335:1366M"
 
 /* Version number of package */
 #define VERSION "0.6.2"

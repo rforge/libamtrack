@@ -256,34 +256,6 @@ void AT_max_electron_ranges_m_R( const int*		number_of_particles,
 );
 
 
-#ifdef HAVE_CERNLIB
-void AT_Vavilov_PDF_R( const int*		n,
-		const float*	lambda_V,
-		const float*	kappa,
-		const float*	beta,
-		float*			density
-);
-#endif
-
-
-#ifdef HAVE_CERNLIB
-void AT_Landau_PDF_R( const int*		n,
-		const float*	lambda,
-		float*			density
-);
-#endif
-
-
-void AT_Rutherford_SDCS_R( const float*	E_MeV_u,
-		const int*		particle_no,
-		const int*		material_no,
-		const int*		n,
-		const float*	T_MeV,
-		float*			dsdT_m2_MeV,
-		int*			returnValue
-);
-
-
 void AT_Bethe_mean_energy_loss_MeV_R( const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
@@ -292,68 +264,101 @@ void AT_Bethe_mean_energy_loss_MeV_R( const float*	E_MeV_u,
 );
 
 
-void AT_kappa_R( const float*	E_MeV_u,
+void AT_kappa_multi_R( const int*		n,
+		const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
-		float*			returnValue
+		float*			kappa
 );
 
 
-#ifdef HAVE_CERNLIB
-void AT_lambda_from_energy_loss_R( const int*		n,
+void AT_Landau_PDF_R( const int*		n,
+		const float*	lambda_landau,
+		float*			density
+);
+
+
+void AT_lambda_landau_from_energy_loss_multi_R( const int*		n,
 		const float*	energy_loss_keV,
 		const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
-		float*			lambda_V
+		float*			lambda_landau
 );
-#endif
 
 
-#ifdef HAVE_CERNLIB
-void AT_Vavilov_energy_loss_distribution_R( const int*		n,
+void AT_lambda_mean_multi_R( const int*		n,
+		const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			lambda_mean
+);
+
+
+void AT_lambda_max_multi_R( const int*		n,
+		const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			lambda_max
+);
+
+
+void AT_energy_loss_from_lambda_landau_multi_R( const int*		n,
+		const float*	lambda_landau,
+		const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			energy_loss_keV
+);
+
+
+void AT_Vavilov_PDF_R( const int*		n,
+		const float*	lambda_vavilov,
+		const float*	kappa,
+		const float*	beta,
+		float*			density
+);
+
+
+void AT_lambda_vavilov_from_energy_loss_multi_R( const int*		n,
 		const float*	energy_loss_keV,
 		const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
-		float*			fDdD
+		float*			lambda_vavilov
 );
-#endif
 
 
-#ifdef HAVE_CERNLIB
-void AT_energy_loss_distribution_R( const int*		n,
-		const float*	energy_loss_keV,
+void AT_energy_loss_from_lambda_vavilov_multi_R( const int*		n,
+		const float*	lambda_vavilov,
 		const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
-		float*			fDdD
+		float*			energy_loss_keV
 );
-#endif
 
 
-#ifdef HAVE_CERNLIB
-void AT_energy_loss_mode_R( const float*	E_MeV_u,
+void AT_Gauss_PDF_R( const int*		n,
+		const float*	lambda_gauss,
+		float*			density
+);
+
+
+void AT_energy_loss_from_lambda_gauss_multi_R( const int*		n,
+		const float*	lambda_gauss,
+		const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
-		float*			returnValue
+		float*			energy_loss_keV
 );
-#endif
-
-
-#ifdef HAVE_CERNLIB
-void AT_energy_loss_FWHM_R( const float*	E_MeV_u,
-		const int*		particle_no,
-		const int*		material_no,
-		const float*	slab_thickness_um,
-		float*			returnValue
-);
-#endif
 
 
 void AT_beta_from_E_R( const int*		n,
@@ -536,6 +541,16 @@ void AT_mean_number_of_tracks_contrib_R( const int*		number_of_field_components,
 		const int*		er_model,
 		const int*		stopping_power_source_no,
 		float*			returnValue
+);
+
+
+void AT_Rutherford_SDCS_R( const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const int*		n,
+		const float*	T_MeV,
+		float*			dsdT_m2_MeV,
+		int*			returnValue
 );
 
 

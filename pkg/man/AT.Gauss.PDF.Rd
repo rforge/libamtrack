@@ -1,13 +1,13 @@
-% TODO File path/AT.Landau.PDF.Rd
-\name{AT.Landau.PDF}
-\alias{AT.Landau.PDF}
-\title{AT.Landau.PDF}
-\description{Compute Landau distribution using CERNLIB (G115)
+% TODO File path/AT.Gauss.PDF.Rd
+\name{AT.Gauss.PDF}
+\alias{AT.Gauss.PDF}
+\title{AT.Gauss.PDF}
+\description{Compute Gauss distribution (for compatibility)
 }
-\usage{AT.Landau.PDF(lambda.landau)
+\usage{AT.Gauss.PDF(lambda.gauss)
 }
 \arguments{
-  \item{lambda.landau}{ Landau lambda (array of size n).}
+  \item{lambda.gauss}{ Gauss lambda (array of size n).}
 }
 \value{
 % TODO proper return definition of lists!!! ADD
@@ -17,5 +17,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L103}
+ss.c#L596}
 }

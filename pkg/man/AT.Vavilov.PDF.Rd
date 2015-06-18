@@ -4,10 +4,10 @@
 \title{AT.Vavilov.PDF}
 \description{Compute Vavilov distribution using CERNLIB (G116)
 }
-\usage{AT.Vavilov.PDF(lambda.V, kappa, beta)
+\usage{AT.Vavilov.PDF(lambda.vavilov, kappa, beta)
 }
 \arguments{
-  \item{lambda.V}{ lambda (array of size n).}
+  \item{lambda.vavilov}{ Vavilov lambda (array of size n).}
   \item{kappa}{ straggling parameter.}
   \item{beta}{ relativistic speed, between 0 and 1.}
 }
@@ -19,5 +19,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L32}
+ss.c#L295}
 }

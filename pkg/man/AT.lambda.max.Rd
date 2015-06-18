@@ -1,12 +1,11 @@
-% TODO File path/AT.kappa.Rd
-\name{AT.kappa}
-\alias{AT.kappa}
-\title{AT.kappa}
-\description{Computes the kappa criterium for the
- energy loss distribution according to
- Seltzer and Berger, and CERN W5013
- No effective projectile charge is considered!}
-\usage{AT.kappa(E.MeV.u, particle.no, material.no, slab.thickness.um)
+% TODO File path/AT.lambda.max.Rd
+\name{AT.lambda.max}
+\alias{AT.lambda.max}
+\title{AT.lambda.max}
+\description{Computes the mean lambda, introduced to enable
+ average value for Landau distribution. See Geant3 W5013, p.254
+}
+\usage{AT.lambda.max(E.MeV.u, particle.no, material.no, slab.thickness.um)
 }
 \arguments{
   \item{E.MeV.u}{ energy of particle per amu (array of size n) (see also
@@ -19,10 +18,10 @@
 \value{
 % TODO proper return definition of lists!!! ADD
 % NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
-  \item{kappa}{ kappa parameter (array of size n)}
+  \item{lambda.max}{ maximum lambda for given particle (array of size n)}
 }
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L89}
+ss.c#L133}
 }

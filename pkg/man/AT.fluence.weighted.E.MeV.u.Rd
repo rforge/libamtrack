@@ -22,7 +22,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L531}
+outines.c#L578}
 }
 \examples{
 # fluence- and dose-weighted mean energy for a simple mixed field

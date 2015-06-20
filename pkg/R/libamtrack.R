@@ -698,14 +698,35 @@ AT.max.electron.ranges.m <- function( E.MeV.u,
 }
 
 
-AT.Bethe.mean.energy.loss.MeV <- function( E.MeV.u,
+AT.mean.energy.loss.keV <- function( E.MeV.u,
 			particle.no,
 			material.no,
 			slab.thickness.um){
 
 	returnValue = numeric(1)
 
-	res <- .C("AT_Bethe_mean_energy_loss_MeV_R", 
+	res <- .C("AT_mean_energy_loss_keV_R", 
+			E.MeV.u = as.single(E.MeV.u),
+			particle.no = as.integer(particle.no),
+			material.no = as.integer(material.no),
+			slab.thickness.um = as.single(slab.thickness.um),
+			returnValue = as.single(returnValue),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$returnValue
+	 names(return.list) <- c("returnValue")
+	 return(return.list)
+}
+
+
+AT.xi.keV <- function( E.MeV.u,
+			particle.no,
+			material.no,
+			slab.thickness.um){
+
+	returnValue = numeric(1)
+
+	res <- .C("AT_xi_keV_R", 
 			E.MeV.u = as.single(E.MeV.u),
 			particle.no = as.integer(particle.no),
 			material.no = as.integer(material.no),
@@ -761,6 +782,23 @@ AT.Landau.PDF <- function( lambda.landau){
 	 return.list <- list(1)
 	 return.list[[1]] <- res$density
 	 names(return.list) <- c("density")
+	 return(return.list)
+}
+
+
+AT.Landau.IDF <- function( rnd){
+
+	n	<- length(rnd)
+	lambda.landau <- numeric(n)
+
+	res <- .C("AT_Landau_IDF_R", 
+			n = as.integer(n),
+			rnd = as.single(rnd),
+			lambda.landau = as.single(lambda.landau),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.landau
+	 names(return.list) <- c("lambda.landau")
 	 return(return.list)
 }
 
@@ -903,6 +941,33 @@ AT.Vavilov.PDF <- function( lambda.vavilov,
 }
 
 
+AT.Vavilov.IDF <- function( rnd,
+			kappa,
+			beta){
+
+	n	<- length(rnd)
+	if(n != length(kappa)){cat("Array size mismatch for 'n'!\n")
+		return}
+
+	if(n != length(beta)){cat("Array size mismatch for 'n'!\n")
+		return}
+
+	lambda.vavilov <- numeric(n)
+
+	res <- .C("AT_Vavilov_IDF_R", 
+			n = as.integer(n),
+			rnd = as.single(rnd),
+			kappa = as.single(kappa),
+			beta = as.single(beta),
+			lambda.vavilov = as.single(lambda.vavilov),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.vavilov
+	 names(return.list) <- c("lambda.vavilov")
+	 return(return.list)
+}
+
+
 AT.lambda.vavilov.from.energy.loss <- function( energy.loss.keV,
 			E.MeV.u,
 			particle.no,
@@ -975,6 +1040,23 @@ AT.Gauss.PDF <- function( lambda.gauss){
 	 return.list <- list(1)
 	 return.list[[1]] <- res$density
 	 names(return.list) <- c("density")
+	 return(return.list)
+}
+
+
+AT.Gauss.IDF <- function( rnd){
+
+	n	<- length(rnd)
+	lambda.gauss <- numeric(n)
+
+	res <- .C("AT_Gauss_IDF_R", 
+			n = as.integer(n),
+			rnd = as.single(rnd),
+			lambda.gauss = as.single(lambda.gauss),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.gauss
+	 names(return.list) <- c("lambda.gauss")
 	 return(return.list)
 }
 
@@ -1169,6 +1251,31 @@ AT.effective.charge.from.E.MeV.u <- function( E.MeV.u,
 	 return.list[[1]] <- res$effective.charge
 	 return.list[[2]] <- res$returnValue
 	 names(return.list) <- c("effective.charge", "returnValue")
+	 return(return.list)
+}
+
+
+AT.max.E.transfer.MeV.new <- function( E.MeV.u,
+			A){
+
+	n	<- length(E.MeV.u)
+	if(n != length(A)){cat("Array size mismatch for 'n'!\n")
+		return}
+
+	max.E.transfer.MeV <- numeric(n)
+	returnValue = numeric(1)
+
+	res <- .C("AT_max_E_transfer_MeV_new_R", 
+			n = as.integer(n),
+			E.MeV.u = as.single(E.MeV.u),
+			A = as.integer(A),
+			max.E.transfer.MeV = as.single(max.E.transfer.MeV),
+			returnValue = as.integer(returnValue),PACKAGE="libamtrack")
+
+	 return.list <- list(2)
+	 return.list[[1]] <- res$max.E.transfer.MeV
+	 return.list[[2]] <- res$returnValue
+	 names(return.list) <- c("max.E.transfer.MeV", "returnValue")
 	 return(return.list)
 }
 

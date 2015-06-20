@@ -23,7 +23,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L396}
+outines.c#L443}
 }
 \examples{
 # Get peak dose of a 142.66 MeV protons in Alox

@@ -28,7 +28,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L502}
+outines.c#L549}
 }
 \examples{
 # Compute total fluence in a 

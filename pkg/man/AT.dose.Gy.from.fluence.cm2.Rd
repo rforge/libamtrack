@@ -25,7 +25,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L297}
+outines.c#L344}
 }
 \examples{
 # Compute dose from protons, He-3, C-12 and O-16 at

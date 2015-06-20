@@ -2,7 +2,7 @@
 \name{AT.Gauss.PDF}
 \alias{AT.Gauss.PDF}
 \title{AT.Gauss.PDF}
-\description{Compute Gauss distribution (for compatibility)
+\description{Computes Gauss probability density function (for compatibility)
 }
 \usage{AT.Gauss.PDF(lambda.gauss)
 }
@@ -17,5 +17,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L596}
+ss.c#L578}
 }

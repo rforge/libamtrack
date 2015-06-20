@@ -36,7 +36,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L674}
+outines.c#L721}
 }
 \examples{
 df                <-    expand.grid( particle.name         = "1H",            

@@ -2,7 +2,8 @@
 \name{AT.Vavilov.PDF}
 \alias{AT.Vavilov.PDF}
 \title{AT.Vavilov.PDF}
-\description{Compute Vavilov distribution using CERNLIB (G116)
+\description{Computes the Vavilov probability density function using CERNLIB
+ (G116)
 }
 \usage{AT.Vavilov.PDF(lambda.vavilov, kappa, beta)
 }
@@ -19,5 +20,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L295}
+ss.c#L269}
 }

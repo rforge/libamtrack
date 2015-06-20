@@ -1219,7 +1219,7 @@ void AT_max_electron_ranges_m_R( const int*		number_of_particles,
 
 
 
-void AT_Bethe_mean_energy_loss_MeV_R( const float*	E_MeV_u,
+void AT_mean_energy_loss_keV_R( const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
@@ -1230,7 +1230,33 @@ void AT_Bethe_mean_energy_loss_MeV_R( const float*	E_MeV_u,
   const long material_no_long = (long)(*material_no);
   const double slab_thickness_um_double = (double)(*slab_thickness_um);
 
-  double returnValue_internal = 	AT_Bethe_mean_energy_loss_MeV( E_MeV_u_double,
+  double returnValue_internal = 	AT_mean_energy_loss_keV( E_MeV_u_double,
+	particle_no_long,
+	material_no_long,
+	slab_thickness_um_double);
+
+//Results:
+
+	*returnValue = ( float )returnValue_internal;
+
+
+//Free allocated space
+}
+
+
+
+void AT_xi_keV_R( const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			returnValue
+){
+  const double E_MeV_u_double = (double)(*E_MeV_u);
+  const long particle_no_long = (long)(*particle_no);
+  const long material_no_long = (long)(*material_no);
+  const double slab_thickness_um_double = (double)(*slab_thickness_um);
+
+  double returnValue_internal = 	AT_xi_keV( E_MeV_u_double,
 	particle_no_long,
 	material_no_long,
 	slab_thickness_um_double);
@@ -1324,6 +1350,41 @@ void AT_Landau_PDF_R( const int*		n,
 //Free allocated space
   free(lambda_landau_double);
   free(density_double);
+}
+
+
+
+void AT_Landau_IDF_R( const int*		n,
+		const float*	rnd,
+		float*			lambda_landau
+){
+  long i;
+  const long n_long = (long)(*n);
+
+//Allocate space for the input parameter.
+  double* rnd_double = (double*)calloc(n_long,sizeof(double));
+
+
+//Fill in the input parameter.
+  for(i = 0 ; i < n_long; i++){
+	rnd_double[i] = (double)rnd[i];
+  }
+
+//Allocate space for the results.
+  double* lambda_landau_double = (double*)calloc(n_long,sizeof(double));
+
+  AT_Landau_IDF( n_long,
+	rnd_double,
+	lambda_landau_double);
+
+//Results:
+  for(i = 0 ; i < n_long; i++){
+	lambda_landau[i] = (float)lambda_landau_double[i];
+  }
+
+//Free allocated space
+  free(rnd_double);
+  free(lambda_landau_double);
 }
 
 
@@ -1565,6 +1626,51 @@ void AT_Vavilov_PDF_R( const int*		n,
 
 
 
+void AT_Vavilov_IDF_R( const int*		n,
+		const float*	rnd,
+		const float*	kappa,
+		const float*	beta,
+		float*			lambda_vavilov
+){
+  long i;
+  const long n_long = (long)(*n);
+
+//Allocate space for the input parameter.
+  double* rnd_double = (double*)calloc(n_long,sizeof(double));
+  double* kappa_double = (double*)calloc(n_long,sizeof(double));
+  double* beta_double = (double*)calloc(n_long,sizeof(double));
+
+
+//Fill in the input parameter.
+  for(i = 0 ; i < n_long; i++){
+	rnd_double[i] = (double)rnd[i];
+	kappa_double[i] = (double)kappa[i];
+	beta_double[i] = (double)beta[i];
+  }
+
+//Allocate space for the results.
+  double* lambda_vavilov_double = (double*)calloc(n_long,sizeof(double));
+
+  AT_Vavilov_IDF( n_long,
+	rnd_double,
+	kappa_double,
+	beta_double,
+	lambda_vavilov_double);
+
+//Results:
+  for(i = 0 ; i < n_long; i++){
+	lambda_vavilov[i] = (float)lambda_vavilov_double[i];
+  }
+
+//Free allocated space
+  free(rnd_double);
+  free(kappa_double);
+  free(beta_double);
+  free(lambda_vavilov_double);
+}
+
+
+
 void AT_lambda_vavilov_from_energy_loss_multi_R( const int*		n,
 		const float*	energy_loss_keV,
 		const float*	E_MeV_u,
@@ -1696,6 +1802,41 @@ void AT_Gauss_PDF_R( const int*		n,
 //Free allocated space
   free(lambda_gauss_double);
   free(density_double);
+}
+
+
+
+void AT_Gauss_IDF_R( const int*		n,
+		const float*	rnd,
+		float*			lambda_gauss
+){
+  long i;
+  const long n_long = (long)(*n);
+
+//Allocate space for the input parameter.
+  double* rnd_double = (double*)calloc(n_long,sizeof(double));
+
+
+//Fill in the input parameter.
+  for(i = 0 ; i < n_long; i++){
+	rnd_double[i] = (double)rnd[i];
+  }
+
+//Allocate space for the results.
+  double* lambda_gauss_double = (double*)calloc(n_long,sizeof(double));
+
+  AT_Gauss_IDF( n_long,
+	rnd_double,
+	lambda_gauss_double);
+
+//Results:
+  for(i = 0 ; i < n_long; i++){
+	lambda_gauss[i] = (float)lambda_gauss_double[i];
+  }
+
+//Free allocated space
+  free(rnd_double);
+  free(lambda_gauss_double);
 }
 
 
@@ -2043,6 +2184,50 @@ void AT_effective_charge_from_E_MeV_u_R( const int*		n,
   free(E_MeV_u_double);
   free(particle_no_long);
   free(effective_charge_double);
+}
+
+
+
+void AT_max_E_transfer_MeV_new_R( const int*		n,
+		const float*	E_MeV_u,
+		const int*		A,
+		float*			max_E_transfer_MeV,
+		int*			returnValue
+){
+  long i;
+  const long n_long = (long)(*n);
+
+//Allocate space for the input parameter.
+  double* E_MeV_u_double = (double*)calloc(n_long,sizeof(double));
+  long* A_long = (long*)calloc(n_long,sizeof(long));
+
+
+//Fill in the input parameter.
+  for(i = 0 ; i < n_long; i++){
+	E_MeV_u_double[i] = (double)E_MeV_u[i];
+	A_long[i] = (long)A[i];
+  }
+
+//Allocate space for the results.
+  double* max_E_transfer_MeV_double = (double*)calloc(n_long,sizeof(double));
+
+  int returnValue_internal = 	AT_max_E_transfer_MeV_new( n_long,
+	E_MeV_u_double,
+	A_long,
+	max_E_transfer_MeV_double);
+
+//Results:
+
+	*returnValue = ( int )returnValue_internal;
+
+  for(i = 0 ; i < n_long; i++){
+	max_E_transfer_MeV[i] = (float)max_E_transfer_MeV_double[i];
+  }
+
+//Free allocated space
+  free(E_MeV_u_double);
+  free(A_long);
+  free(max_E_transfer_MeV_double);
 }
 
 

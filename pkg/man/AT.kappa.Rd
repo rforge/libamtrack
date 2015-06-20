@@ -24,5 +24,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L89}
+ss.c#L65}
 }

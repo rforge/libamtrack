@@ -256,7 +256,15 @@ void AT_max_electron_ranges_m_R( const int*		number_of_particles,
 );
 
 
-void AT_Bethe_mean_energy_loss_MeV_R( const float*	E_MeV_u,
+void AT_mean_energy_loss_keV_R( const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			returnValue
+);
+
+
+void AT_xi_keV_R( const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
@@ -276,6 +284,12 @@ void AT_kappa_multi_R( const int*		n,
 void AT_Landau_PDF_R( const int*		n,
 		const float*	lambda_landau,
 		float*			density
+);
+
+
+void AT_Landau_IDF_R( const int*		n,
+		const float*	rnd,
+		float*			lambda_landau
 );
 
 
@@ -325,6 +339,14 @@ void AT_Vavilov_PDF_R( const int*		n,
 );
 
 
+void AT_Vavilov_IDF_R( const int*		n,
+		const float*	rnd,
+		const float*	kappa,
+		const float*	beta,
+		float*			lambda_vavilov
+);
+
+
 void AT_lambda_vavilov_from_energy_loss_multi_R( const int*		n,
 		const float*	energy_loss_keV,
 		const float*	E_MeV_u,
@@ -348,6 +370,12 @@ void AT_energy_loss_from_lambda_vavilov_multi_R( const int*		n,
 void AT_Gauss_PDF_R( const int*		n,
 		const float*	lambda_gauss,
 		float*			density
+);
+
+
+void AT_Gauss_IDF_R( const int*		n,
+		const float*	rnd,
+		float*			lambda_gauss
 );
 
 
@@ -411,6 +439,14 @@ void AT_effective_charge_from_E_MeV_u_R( const int*		n,
 		const float*	E_MeV_u,
 		const int*		particle_no,
 		float*			effective_charge,
+		int*			returnValue
+);
+
+
+void AT_max_E_transfer_MeV_new_R( const int*		n,
+		const float*	E_MeV_u,
+		const int*		A,
+		float*			max_E_transfer_MeV,
 		int*			returnValue
 );
 

@@ -5,7 +5,6 @@ useDynLib("libamtrack", .registration = TRUE)
 
 export(
 	"AT.A.from.particle.no",
-	"AT.Bethe.mean.energy.loss.MeV",
 	"AT.CPPSC.alpha.and.beta",
 	"AT.CSDA.energy.after.slab.E.MeV.u",
 	"AT.CSDA.range.Bethe.g.cm2",
@@ -16,8 +15,10 @@ export(
 	"AT.FLUKA.read.USRBIN.mesh",
 	"AT.FLUKA.read.USRBIN.regs",
 	"AT.FLUKA.read.USRTRACK",
+	"AT.Gauss.IDF",
 	"AT.Gauss.PDF",
 	"AT.I.eV.from.composition",
+	"AT.Landau.IDF",
 	"AT.Landau.PDF",
 	"AT.Mass.Stopping.Power",
 	"AT.Mass.Stopping.Power.with.no",
@@ -33,6 +34,7 @@ export(
 	"AT.SPC.tapply",
 	"AT.Stopping.Power",
 	"AT.Stopping.Power.with.no",
+	"AT.Vavilov.IDF",
 	"AT.Vavilov.PDF",
 	"AT.WEPL.Bethe",
 	"AT.Z.from.particle.no",
@@ -72,7 +74,9 @@ export(
 	"AT.material.name.from.material.no",
 	"AT.material.no.from.material.name",
 	"AT.max.E.transfer.MeV",
+	"AT.max.E.transfer.MeV.new",
 	"AT.max.electron.ranges.m",
+	"AT.mean.energy.loss.keV",
 	"AT.mean.number.of.tracks.contrib",
 	"AT.momentum.MeV.c.u.from.E.MeV.u",
 	"AT.nuclear.spin.from.particle.no",
@@ -88,7 +92,8 @@ export(
 	"AT.stopping.power.ratio",
 	"AT.total.D.Gy",
 	"AT.total.fluence.cm2",
-	"AT.translate.dose.into.DSB.distribution"
+	"AT.translate.dose.into.DSB.distribution",
+	"AT.xi.keV"
 )
 
 

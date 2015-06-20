@@ -2,7 +2,8 @@
 \name{AT.Landau.PDF}
 \alias{AT.Landau.PDF}
 \title{AT.Landau.PDF}
-\description{Compute Landau distribution using CERNLIB (G115)
+\description{Computes the Landau probability density function using CERNLIB
+ (G115)
 }
 \usage{AT.Landau.PDF(lambda.landau)
 }
@@ -17,5 +18,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L103}
+ss.c#L77}
 }

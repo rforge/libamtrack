@@ -5,7 +5,7 @@
 #define CODE_NAME "Red Armadillo"
 
 /* Status of the code */
-#define CODE_STATUS "Development"
+#define CODE_STATUS "Release"
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
@@ -103,7 +103,7 @@
 #define STDC_HEADERS 1
 
 /* repository svn version */
-#define SVN_VERSION "1373M"
+#define SVN_VERSION "1374M"
 
 /* Version number of package */
 #define VERSION "0.6.2"

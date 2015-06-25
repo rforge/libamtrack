@@ -13,11 +13,17 @@
 /* Define to 1 if you have the `floor' function. */
 #define HAVE_FLOOR 1
 
-/* gsl>=1.8 found */
-#define HAVE_GSL_1_8 1
-
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
+
+/* Define to 1 if you have the `gsl' library (-lgsl). */
+#define HAVE_LIBGSL 1
+
+/* Define to 1 if you have the `gslcblas' library (-lgslcblas). */
+#define HAVE_LIBGSLCBLAS 1
+
+/* Define to 1 if you have the `m' library (-lm). */
+#define HAVE_LIBM 1
 
 /* Define to 1 if you have the <malloc.h> header file. */
 #define HAVE_MALLOC_H 1
@@ -103,7 +109,7 @@
 #define STDC_HEADERS 1
 
 /* repository svn version */
-#define SVN_VERSION "1374M"
+#define SVN_VERSION "1377M"
 
 /* Version number of package */
 #define VERSION "0.6.2"

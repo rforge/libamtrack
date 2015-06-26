@@ -2,10 +2,10 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Cryptonym to faciliate versioning for users */
-#define CODE_NAME "Red Armadillo"
+#define CODE_NAME "Green Armadillo"
 
 /* Status of the code */
-#define CODE_STATUS "Release"
+#define CODE_STATUS "Development"
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
@@ -94,7 +94,7 @@
 #define PACKAGE_NAME "libamtrack"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "libamtrack 0.6.2"
+#define PACKAGE_STRING "libamtrack 0.6.3"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "libamtrack"
@@ -103,16 +103,16 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.6.2"
+#define PACKAGE_VERSION "0.6.3"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
 
 /* repository svn version */
-#define SVN_VERSION "1377M"
+#define SVN_VERSION "1380M"
 
 /* Version number of package */
-#define VERSION "0.6.2"
+#define VERSION "0.6.3"
 
 /* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
    <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the

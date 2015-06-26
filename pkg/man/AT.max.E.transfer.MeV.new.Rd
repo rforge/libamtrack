@@ -21,6 +21,6 @@
 }
 \seealso{
 View the C source code here:
-\url{http://sourceforge.net/apps/trac/libamtrack/browser/tags/0.6.2/src/AT_Phy
-sicsRoutines.c#L209}
+\url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
+outines.c#L209}
 }

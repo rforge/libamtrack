@@ -109,7 +109,7 @@
 #define STDC_HEADERS 1
 
 /* repository svn version */
-#define SVN_VERSION "1380M"
+#define SVN_VERSION "1382M"
 
 /* Version number of package */
 #define VERSION "0.6.3"

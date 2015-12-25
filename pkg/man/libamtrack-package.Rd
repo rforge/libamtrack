@@ -21,7 +21,7 @@ Please note that libamtrack is still under heavy development and so is the R
 \tabular{ll}{
 Package: \tab libamtrack\cr
 Version: \tab 0.6.4 (Yellow Armadillo)\cr
-Date: \tab 2015-12-24\cr
+Date: \tab 2015-12-25\cr
 Depends: \tab R (>= 2.12.0)\cr
 Suggests: \tab lattice\cr
 SystemRequirements: \tab gsl (optinally: cernlib to enable energy loss

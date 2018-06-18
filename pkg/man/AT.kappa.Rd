@@ -5,7 +5,8 @@
 \description{Computes the kappa criterium for the
  energy loss distribution according to
  Seltzer and Berger, and CERN W5013
- No effective projectile charge is considered!}
+ No effective projectile charge is considered!
+}
 \usage{AT.kappa(E.MeV.u, particle.no, material.no, slab.thickness.um)
 }
 \arguments{
@@ -24,5 +25,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L65}
+ss.c#L70}
 }

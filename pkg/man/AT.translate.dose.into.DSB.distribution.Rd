@@ -32,5 +32,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_Successi
-veConvolutions.c#L1130}
+veConvolutions.c#L1137}
 }

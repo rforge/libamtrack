@@ -1,11 +1,14 @@
-% TODO File path/AT.lambda.landau.from.energy.loss.Rd
-\name{AT.lambda.landau.from.energy.loss}
-\alias{AT.lambda.landau.from.energy.loss}
-\title{AT.lambda.landau.from.energy.loss}
-\description{Computes the lambda parameter for the
- Landau distribution acc. to CERN W5013
+% TODO File path/AT.lambda.Landau.from.energy.loss.Rd
+\name{AT.lambda.Landau.from.energy.loss}
+\alias{AT.lambda.Landau.from.energy.loss}
+\title{AT.lambda.Landau.from.energy.loss}
+\description{Converts the lambda parameter in Landau definition to
+ the corresponding energy loss. CAVE: Use this function
+ also with the lambda from AT_Vavilov_PDF and AT_Vavilov_IDF
+ since these work with the Landau definition rather than the
+ Vavilov definition of lambda.
  No effective projectile charge is considered!}
-\usage{AT.lambda.landau.from.energy.loss(energy.loss.keV, E.MeV.u,
+\usage{AT.lambda.Landau.from.energy.loss(energy.loss.keV, E.MeV.u,
  particle.no, material.no, slab.thickness.um)
 }
 \arguments{
@@ -24,5 +27,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L149}
+ss.c#L120}
 }

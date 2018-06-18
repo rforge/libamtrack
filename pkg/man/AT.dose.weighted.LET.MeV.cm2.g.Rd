@@ -28,7 +28,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L674}
+outines.c#L670}
 }
 \examples{
 # fluence- and dose-weighted LET for a simple mixed field

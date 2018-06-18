@@ -1,11 +1,13 @@
-% TODO File path/AT.lambda.mean.Rd
-\name{AT.lambda.mean}
-\alias{AT.lambda.mean}
-\title{AT.lambda.mean}
-\description{Computes the mean lambda, introduced to enable
+% TODO File path/AT.lambda.Landau.max.Rd
+\name{AT.lambda.Landau.max}
+\alias{AT.lambda.Landau.max}
+\title{AT.lambda.Landau.max}
+\description{Computes the maximum value for lambda introduced to cut the
+ distribution tail and enable
  average value for Landau distribution. See Geant3 W5013, p.254
 }
-\usage{AT.lambda.mean(E.MeV.u, particle.no, material.no, slab.thickness.um)
+\usage{AT.lambda.Landau.max(E.MeV.u, particle.no, material.no,
+ slab.thickness.um)
 }
 \arguments{
   \item{E.MeV.u}{ energy of particle per amu (array of size n) (see also
@@ -18,10 +20,11 @@
 \value{
 % TODO proper return definition of lists!!! ADD
 % NUMBER_OF_FIELD_COMPONENT_DESCRIBTION AGAIN!!!)
-  \item{lambda.mean}{ mean lambda for given particle (array of size n)}
+  \item{lambda.landau.max}{ maximum Landau lambda for given particle (array of
+ size n)}
 }
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L93}
+ss.c#L194}
 }

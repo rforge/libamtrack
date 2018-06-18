@@ -20,10 +20,10 @@ AT.run.CPPSC.method <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2.or.dose.Gy)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	rdd.parameters <- c(rdd.parameters, rep(0, 4 - length(rdd.parameters)))
 
@@ -102,10 +102,10 @@ AT.run.GSM.method <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2.or.dose.Gy)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	rdd.parameters <- c(rdd.parameters, rep(0, 4 - length(rdd.parameters)))
 
@@ -181,10 +181,10 @@ AT.run.IGK.method <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2.or.dose.Gy)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	rdd.parameters <- c(rdd.parameters, rep(0, 4 - length(rdd.parameters)))
 
@@ -240,10 +240,10 @@ AT.set.user.material.from.composition <- function( density.g.cm3,
 
 	n	<- length(A)
 	if(n != length(Z)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(weight.fraction)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	status <- numeric(1)
 
@@ -289,10 +289,10 @@ AT.I.eV.from.composition <- function( Z,
 
 	n	<- length(Z)
 	if(n != length(A)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(weight.fraction)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	I.eV <- numeric(1)
 
@@ -317,10 +317,10 @@ AT.effective.Z.from.composition <- function( Z,
 
 	n	<- length(Z)
 	if(n != length(weight.fraction)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(electron.densities.cm3)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	effective.Z <- numeric(1)
 
@@ -344,7 +344,7 @@ AT.average.Z.from.composition <- function( Z,
 
 	n	<- length(Z)
 	if(n != length(weight.fraction)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	average.Z <- numeric(1)
 
@@ -366,7 +366,7 @@ AT.average.A.from.composition <- function( A,
 
 	n	<- length(A)
 	if(n != length(weight.fraction)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	average.A <- numeric(1)
 
@@ -390,10 +390,10 @@ AT.electron.density.m3.from.composition <- function( density.g.cm3,
 
 	n	<- length(Z)
 	if(n != length(A)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(weight.fraction)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	electron.density.m3 <- numeric(1)
 
@@ -418,10 +418,10 @@ AT.electron.density.m3 <- function( density.g.cm3,
 
 	n	<- length(density.g.cm3)
 	if(n != length(average.Z)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(average.A)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	electron.density.m3 <- numeric(n)
 
@@ -576,7 +576,7 @@ AT.particle.no.from.Z.and.A <- function( Z,
 
 	n	<- length(Z)
 	if(n != length(A)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	particle.no <- numeric(n)
 	returnValue = numeric(1)
@@ -603,10 +603,10 @@ AT.CSDA.range.g.cm2 <- function( E.initial.MeV.u,
 
 	n	<- length(E.initial.MeV.u)
 	if(n != length(E.final.MeV.u)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	CSDA.range.cm2.g <- numeric(n)
 
@@ -695,10 +695,10 @@ AT.kappa <- function( E.MeV.u,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	kappa <- numeric(n)
 
@@ -751,7 +751,7 @@ AT.Landau.IDF <- function( rnd){
 }
 
 
-AT.lambda.landau.from.energy.loss <- function( energy.loss.keV,
+AT.lambda.Landau.from.energy.loss <- function( energy.loss.keV,
 			E.MeV.u,
 			particle.no,
 			material.no,
@@ -760,7 +760,7 @@ AT.lambda.landau.from.energy.loss <- function( energy.loss.keV,
 	n	<- length(energy.loss.keV)
 	lambda.landau <- numeric(n)
 
-	res <- .C("AT_lambda_landau_from_energy_loss_multi_R", 
+	res <- .C("AT_lambda_Landau_from_energy_loss_multi_R", 
 			n = as.integer(n),
 			energy.loss.keV = as.single(energy.loss.keV),
 			E.MeV.u = as.single(E.MeV.u),
@@ -776,65 +776,7 @@ AT.lambda.landau.from.energy.loss <- function( energy.loss.keV,
 }
 
 
-AT.lambda.mean <- function( E.MeV.u,
-			particle.no,
-			material.no,
-			slab.thickness.um){
-
-	n	<- length(E.MeV.u)
-	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
-
-	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
-		return}
-
-	lambda.mean <- numeric(n)
-
-	res <- .C("AT_lambda_mean_multi_R", 
-			n = as.integer(n),
-			E.MeV.u = as.single(E.MeV.u),
-			particle.no = as.integer(particle.no),
-			material.no = as.integer(material.no),
-			slab.thickness.um = as.single(slab.thickness.um),
-			lambda.mean = as.single(lambda.mean),PACKAGE="libamtrack")
-
-	 return.list <- list(1)
-	 return.list[[1]] <- res$lambda.mean
-	 names(return.list) <- c("lambda.mean")
-	 return(return.list)
-}
-
-
-AT.lambda.max <- function( E.MeV.u,
-			particle.no,
-			material.no,
-			slab.thickness.um){
-
-	n	<- length(E.MeV.u)
-	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
-
-	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
-		return}
-
-	lambda.max <- numeric(n)
-
-	res <- .C("AT_lambda_max_multi_R", 
-			n = as.integer(n),
-			E.MeV.u = as.single(E.MeV.u),
-			particle.no = as.integer(particle.no),
-			material.no = as.integer(material.no),
-			slab.thickness.um = as.single(slab.thickness.um),
-			lambda.max = as.single(lambda.max),PACKAGE="libamtrack")
-
-	 return.list <- list(1)
-	 return.list[[1]] <- res$lambda.max
-	 names(return.list) <- c("lambda.max")
-	 return(return.list)
-}
-
-
-AT.energy.loss.from.lambda.landau <- function( lambda.landau,
+AT.energy.loss.from.lambda.Landau <- function( lambda.landau,
 			E.MeV.u,
 			particle.no,
 			material.no,
@@ -842,17 +784,17 @@ AT.energy.loss.from.lambda.landau <- function( lambda.landau,
 
 	n	<- length(lambda.landau)
 	if(n != length(E.MeV.u)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	energy.loss.keV <- numeric(n)
 
-	res <- .C("AT_energy_loss_from_lambda_landau_multi_R", 
+	res <- .C("AT_energy_loss_from_lambda_Landau_multi_R", 
 			n = as.integer(n),
 			lambda.landau = as.single(lambda.landau),
 			E.MeV.u = as.single(E.MeV.u),
@@ -868,16 +810,118 @@ AT.energy.loss.from.lambda.landau <- function( lambda.landau,
 }
 
 
-AT.Vavilov.PDF <- function( lambda.vavilov,
+AT.lambda.Landau.mean <- function( E.MeV.u,
+			particle.no,
+			material.no,
+			slab.thickness.um){
+
+	n	<- length(E.MeV.u)
+	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	lambda.landau.mean <- numeric(n)
+
+	res <- .C("AT_lambda_Landau_mean_multi_R", 
+			n = as.integer(n),
+			E.MeV.u = as.single(E.MeV.u),
+			particle.no = as.integer(particle.no),
+			material.no = as.integer(material.no),
+			slab.thickness.um = as.single(slab.thickness.um),
+			lambda.landau.mean = as.single(lambda.landau.mean),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.landau.mean
+	 names(return.list) <- c("lambda.landau.mean")
+	 return(return.list)
+}
+
+
+AT.lambda.Landau.max <- function( E.MeV.u,
+			particle.no,
+			material.no,
+			slab.thickness.um){
+
+	n	<- length(E.MeV.u)
+	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	lambda.landau.max <- numeric(n)
+
+	res <- .C("AT_lambda_Landau_max_multi_R", 
+			n = as.integer(n),
+			E.MeV.u = as.single(E.MeV.u),
+			particle.no = as.integer(particle.no),
+			material.no = as.integer(material.no),
+			slab.thickness.um = as.single(slab.thickness.um),
+			lambda.landau.max = as.single(lambda.landau.max),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.landau.max
+	 names(return.list) <- c("lambda.landau.max")
+	 return(return.list)
+}
+
+
+AT.lambda.Landau.from.lambda.Vavilov <- function( lambda.vavilov,
+			kappa){
+
+	n	<- length(lambda.vavilov)
+	if(n != length(kappa)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	lambda.landau <- numeric(n)
+
+	res <- .C("AT_lambda_Landau_from_lambda_Vavilov_multi_R", 
+			n = as.integer(n),
+			lambda.vavilov = as.single(lambda.vavilov),
+			kappa = as.single(kappa),
+			lambda.landau = as.single(lambda.landau),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.landau
+	 names(return.list) <- c("lambda.landau")
+	 return(return.list)
+}
+
+
+AT.lambda.Vavilov.from.lambda.Landau <- function( lambda.landau,
+			kappa){
+
+	n	<- length(lambda.landau)
+	if(n != length(kappa)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	lambda.vavilov <- numeric(n)
+
+	res <- .C("AT_lambda_Vavilov_from_lambda_Landau_multi_R", 
+			n = as.integer(n),
+			lambda.landau = as.single(lambda.landau),
+			kappa = as.single(kappa),
+			lambda.vavilov = as.single(lambda.vavilov),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.vavilov
+	 names(return.list) <- c("lambda.vavilov")
+	 return(return.list)
+}
+
+
+AT.Vavilov.PDF <- function( lambda.landau,
 			kappa,
 			beta){
 
-	n	<- length(lambda.vavilov)
+	n	<- length(lambda.landau)
 	density <- numeric(n)
 
 	res <- .C("AT_Vavilov_PDF_R", 
 			n = as.integer(n),
-			lambda.vavilov = as.single(lambda.vavilov),
+			lambda.landau = as.single(lambda.landau),
 			kappa = as.single(kappa),
 			beta = as.single(beta),
 			density = as.single(density),PACKAGE="libamtrack")
@@ -895,28 +939,28 @@ AT.Vavilov.IDF <- function( rnd,
 
 	n	<- length(rnd)
 	if(n != length(kappa)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(beta)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
-	lambda.vavilov <- numeric(n)
+	lambda.landau <- numeric(n)
 
 	res <- .C("AT_Vavilov_IDF_R", 
 			n = as.integer(n),
 			rnd = as.single(rnd),
 			kappa = as.single(kappa),
 			beta = as.single(beta),
-			lambda.vavilov = as.single(lambda.vavilov),PACKAGE="libamtrack")
+			lambda.landau = as.single(lambda.landau),PACKAGE="libamtrack")
 
 	 return.list <- list(1)
-	 return.list[[1]] <- res$lambda.vavilov
-	 names(return.list) <- c("lambda.vavilov")
+	 return.list[[1]] <- res$lambda.landau
+	 names(return.list) <- c("lambda.landau")
 	 return(return.list)
 }
 
 
-AT.lambda.vavilov.from.energy.loss <- function( energy.loss.keV,
+AT.lambda.Vavilov.from.energy.loss <- function( energy.loss.keV,
 			E.MeV.u,
 			particle.no,
 			material.no,
@@ -925,7 +969,7 @@ AT.lambda.vavilov.from.energy.loss <- function( energy.loss.keV,
 	n	<- length(energy.loss.keV)
 	lambda.vavilov <- numeric(n)
 
-	res <- .C("AT_lambda_vavilov_from_energy_loss_multi_R", 
+	res <- .C("AT_lambda_Vavilov_from_energy_loss_multi_R", 
 			n = as.integer(n),
 			energy.loss.keV = as.single(energy.loss.keV),
 			E.MeV.u = as.single(E.MeV.u),
@@ -941,7 +985,7 @@ AT.lambda.vavilov.from.energy.loss <- function( energy.loss.keV,
 }
 
 
-AT.energy.loss.from.lambda.vavilov <- function( lambda.vavilov,
+AT.energy.loss.from.lambda.Vavilov <- function( lambda.vavilov,
 			E.MeV.u,
 			particle.no,
 			material.no,
@@ -949,17 +993,17 @@ AT.energy.loss.from.lambda.vavilov <- function( lambda.vavilov,
 
 	n	<- length(lambda.vavilov)
 	if(n != length(E.MeV.u)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	energy.loss.keV <- numeric(n)
 
-	res <- .C("AT_energy_loss_from_lambda_vavilov_multi_R", 
+	res <- .C("AT_energy_loss_from_lambda_Vavilov_multi_R", 
 			n = as.integer(n),
 			lambda.vavilov = as.single(lambda.vavilov),
 			E.MeV.u = as.single(E.MeV.u),
@@ -1009,7 +1053,7 @@ AT.Gauss.IDF <- function( rnd){
 }
 
 
-AT.energy.loss.from.lambda.gauss <- function( lambda.gauss,
+AT.energy.loss.from.lambda.Gauss <- function( lambda.gauss,
 			E.MeV.u,
 			particle.no,
 			material.no,
@@ -1017,17 +1061,17 @@ AT.energy.loss.from.lambda.gauss <- function( lambda.gauss,
 
 	n	<- length(lambda.gauss)
 	if(n != length(E.MeV.u)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	energy.loss.keV <- numeric(n)
 
-	res <- .C("AT_energy_loss_from_lambda_gauss_multi_R", 
+	res <- .C("AT_energy_loss_from_lambda_Gauss_multi_R", 
 			n = as.integer(n),
 			lambda.gauss = as.single(lambda.gauss),
 			E.MeV.u = as.single(E.MeV.u),
@@ -1039,6 +1083,40 @@ AT.energy.loss.from.lambda.gauss <- function( lambda.gauss,
 	 return.list <- list(1)
 	 return.list[[1]] <- res$energy.loss.keV
 	 names(return.list) <- c("energy.loss.keV")
+	 return(return.list)
+}
+
+
+AT.lambda.Gauss.from.energy.loss <- function( energy.loss.keV,
+			E.MeV.u,
+			particle.no,
+			material.no,
+			slab.thickness.um){
+
+	n	<- length(energy.loss.keV)
+	if(n != length(E.MeV.u)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	if(n != length(slab.thickness.um)){cat("Array size mismatch for 'n'!\n")
+		return(NULL)}
+
+	lambda.gauss <- numeric(n)
+
+	res <- .C("AT_lambda_Gauss_from_energy_loss_multi_R", 
+			n = as.integer(n),
+			energy.loss.keV = as.single(energy.loss.keV),
+			E.MeV.u = as.single(E.MeV.u),
+			particle.no = as.integer(particle.no),
+			material.no = as.integer(material.no),
+			slab.thickness.um = as.single(slab.thickness.um),
+			lambda.gauss = as.single(lambda.gauss),PACKAGE="libamtrack")
+
+	 return.list <- list(1)
+	 return.list[[1]] <- res$lambda.gauss
+	 names(return.list) <- c("lambda.gauss")
 	 return(return.list)
 }
 
@@ -1129,7 +1207,7 @@ AT.energy.straggling.MeV2.cm2.g <- function( E.MeV.u,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	dsE2dz.MeV2.cm2.g <- numeric(n)
 
@@ -1155,10 +1233,10 @@ AT.energy.straggling.after.slab.E.MeV.u <- function( E.MeV.u,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(initial.sigma.E.MeV.u)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	sigma.E.MeV.u <- numeric(n)
 
@@ -1183,7 +1261,7 @@ AT.effective.charge.from.E.MeV.u <- function( E.MeV.u,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	effective.charge <- numeric(n)
 	returnValue = numeric(1)
@@ -1208,7 +1286,7 @@ AT.max.E.transfer.MeV.new <- function( E.MeV.u,
 
 	n	<- length(E.MeV.u)
 	if(n != length(A)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	max.E.transfer.MeV <- numeric(n)
 	returnValue = numeric(1)
@@ -1276,10 +1354,10 @@ AT.dose.Gy.from.fluence.cm2 <- function( E.MeV.u,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(fluence.cm2)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	dose.Gy <- numeric(n)
 
@@ -1307,10 +1385,10 @@ AT.fluence.cm2.from.dose.Gy <- function( E.MeV.u,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	if(n != length(D.Gy)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	fluence.cm2 <- numeric(n)
 
@@ -1335,7 +1413,7 @@ AT.beam.par.physical.to.technical <- function( fluence.cm2,
 
 	n	<- length(fluence.cm2)
 	if(n != length(sigma.cm)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	N <- numeric(n)
 	FWHM.mm <- numeric(n)
@@ -1360,7 +1438,7 @@ AT.beam.par.technical.to.physical <- function( N,
 
 	n	<- length(N)
 	if(n != length(FWHM.mm)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	fluence.cm2 <- numeric(n)
 	sigma.cm <- numeric(n)
@@ -1388,10 +1466,10 @@ AT.total.D.Gy <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1419,10 +1497,10 @@ AT.total.fluence.cm2 <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(D.Gy)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1447,7 +1525,7 @@ AT.fluence.weighted.E.MeV.u <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(fluence.cm2)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1472,10 +1550,10 @@ AT.dose.weighted.E.MeV.u <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1503,10 +1581,10 @@ AT.fluence.weighted.LET.MeV.cm2.g <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1534,10 +1612,10 @@ AT.dose.weighted.LET.MeV.cm2.g <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1566,10 +1644,10 @@ AT.stopping.power.ratio <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1599,10 +1677,10 @@ AT.mean.number.of.tracks.contrib <- function( E.MeV.u,
 
 	number.of.field.components	<- length(E.MeV.u)
 	if(number.of.field.components != length(particle.no)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	if(number.of.field.components != length(fluence.cm2)){cat("Array size mismatch for 'number.of.field.components'!\n")
-		return}
+		return(NULL)}
 
 	returnValue = numeric(1)
 
@@ -1728,7 +1806,7 @@ AT.Mass.Stopping.Power <- function( stopping.power.source,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	stopping.power.MeV.cm2.g <- numeric(n)
 	returnValue = numeric(1)
@@ -1757,7 +1835,7 @@ AT.Stopping.Power <- function( stopping.power.source,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	stopping.power.keV.um <- numeric(n)
 	returnValue = numeric(1)
@@ -1786,7 +1864,7 @@ AT.Mass.Stopping.Power.with.no <- function( stopping.power.source.no,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	stopping.power.MeV.cm2.g <- numeric(n)
 	returnValue = numeric(1)
@@ -1815,7 +1893,7 @@ AT.Stopping.Power.with.no <- function( stopping.power.source.no,
 
 	n	<- length(E.MeV.u)
 	if(n != length(particle.no)){cat("Array size mismatch for 'n'!\n")
-		return}
+		return(NULL)}
 
 	stopping.power.keV.um <- numeric(n)
 	returnValue = numeric(1)
@@ -1847,13 +1925,13 @@ AT.translate.dose.into.DSB.distribution <- function( f.d.Gy,
 
 	n.bins.f	<- length(f.d.Gy)
 	if(n.bins.f != length(f.dd.Gy)){cat("Array size mismatch for 'n.bins.f'!\n")
-		return}
+		return(NULL)}
 
 	if(n.bins.f != length(f)){cat("Array size mismatch for 'n.bins.f'!\n")
-		return}
+		return(NULL)}
 
 	if(n.bins.f != length(enhancement.factor)){cat("Array size mismatch for 'n.bins.f'!\n")
-		return}
+		return(NULL)}
 
 	total.pDSBs <- numeric(1)
 	total.nDSBs <- numeric(1)

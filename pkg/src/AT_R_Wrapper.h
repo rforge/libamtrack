@@ -275,7 +275,7 @@ void AT_Landau_IDF_R( const int*		n,
 );
 
 
-void AT_lambda_landau_from_energy_loss_multi_R( const int*		n,
+void AT_lambda_Landau_from_energy_loss_multi_R( const int*		n,
 		const float*	energy_loss_keV,
 		const float*	E_MeV_u,
 		const int*		particle_no,
@@ -285,25 +285,7 @@ void AT_lambda_landau_from_energy_loss_multi_R( const int*		n,
 );
 
 
-void AT_lambda_mean_multi_R( const int*		n,
-		const float*	E_MeV_u,
-		const int*		particle_no,
-		const int*		material_no,
-		const float*	slab_thickness_um,
-		float*			lambda_mean
-);
-
-
-void AT_lambda_max_multi_R( const int*		n,
-		const float*	E_MeV_u,
-		const int*		particle_no,
-		const int*		material_no,
-		const float*	slab_thickness_um,
-		float*			lambda_max
-);
-
-
-void AT_energy_loss_from_lambda_landau_multi_R( const int*		n,
+void AT_energy_loss_from_lambda_Landau_multi_R( const int*		n,
 		const float*	lambda_landau,
 		const float*	E_MeV_u,
 		const int*		particle_no,
@@ -313,8 +295,40 @@ void AT_energy_loss_from_lambda_landau_multi_R( const int*		n,
 );
 
 
-void AT_Vavilov_PDF_R( const int*		n,
+void AT_lambda_Landau_mean_multi_R( const int*		n,
+		const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			lambda_landau_mean
+);
+
+
+void AT_lambda_Landau_max_multi_R( const int*		n,
+		const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			lambda_landau_max
+);
+
+
+void AT_lambda_Landau_from_lambda_Vavilov_multi_R( const int*		n,
 		const float*	lambda_vavilov,
+		const float*	kappa,
+		float*			lambda_landau
+);
+
+
+void AT_lambda_Vavilov_from_lambda_Landau_multi_R( const int*		n,
+		const float*	lambda_landau,
+		const float*	kappa,
+		float*			lambda_vavilov
+);
+
+
+void AT_Vavilov_PDF_R( const int*		n,
+		const float*	lambda_landau,
 		const float*	kappa,
 		const float*	beta,
 		float*			density
@@ -325,11 +339,11 @@ void AT_Vavilov_IDF_R( const int*		n,
 		const float*	rnd,
 		const float*	kappa,
 		const float*	beta,
-		float*			lambda_vavilov
+		float*			lambda_landau
 );
 
 
-void AT_lambda_vavilov_from_energy_loss_multi_R( const int*		n,
+void AT_lambda_Vavilov_from_energy_loss_multi_R( const int*		n,
 		const float*	energy_loss_keV,
 		const float*	E_MeV_u,
 		const int*		particle_no,
@@ -339,7 +353,7 @@ void AT_lambda_vavilov_from_energy_loss_multi_R( const int*		n,
 );
 
 
-void AT_energy_loss_from_lambda_vavilov_multi_R( const int*		n,
+void AT_energy_loss_from_lambda_Vavilov_multi_R( const int*		n,
 		const float*	lambda_vavilov,
 		const float*	E_MeV_u,
 		const int*		particle_no,
@@ -361,13 +375,23 @@ void AT_Gauss_IDF_R( const int*		n,
 );
 
 
-void AT_energy_loss_from_lambda_gauss_multi_R( const int*		n,
+void AT_energy_loss_from_lambda_Gauss_multi_R( const int*		n,
 		const float*	lambda_gauss,
 		const float*	E_MeV_u,
 		const int*		particle_no,
 		const int*		material_no,
 		const float*	slab_thickness_um,
 		float*			energy_loss_keV
+);
+
+
+void AT_lambda_Gauss_from_energy_loss_multi_R( const int*		n,
+		const float*	energy_loss_keV,
+		const float*	E_MeV_u,
+		const int*		particle_no,
+		const int*		material_no,
+		const float*	slab_thickness_um,
+		float*			lambda_gauss
 );
 
 

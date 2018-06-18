@@ -23,7 +23,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L430}
+outines.c#L426}
 }
 \examples{
 # Technical parameters for a double Gaussian beam

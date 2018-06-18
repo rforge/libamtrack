@@ -1,11 +1,16 @@
-% TODO File path/AT.lambda.vavilov.from.energy.loss.Rd
-\name{AT.lambda.vavilov.from.energy.loss}
-\alias{AT.lambda.vavilov.from.energy.loss}
-\title{AT.lambda.vavilov.from.energy.loss}
+% TODO File path/AT.lambda.Vavilov.from.energy.loss.Rd
+\name{AT.lambda.Vavilov.from.energy.loss}
+\alias{AT.lambda.Vavilov.from.energy.loss}
+\title{AT.lambda.Vavilov.from.energy.loss}
 \description{Computes the lambda parameter for the
- Vavilov distribution acc. to CERN W5013
+ Vavilov distribution acc. to CERN W5013.
+ CAVE: CERNLIB functions for the Vavilov distribution work with
+ the Landau definition for lambda, not the Vavilov definition. Use
+ AT_energy_loss_from_lambda_Landau... to convert to energy loss.
+ AT_energy_loss_from_lambda_Vavilov... will only work AFTER converting
+ to the Vavilov definition by AT_lambda_Vavilov_from_lambda_Landau...
  No effective projectile charge is considered!}
-\usage{AT.lambda.vavilov.from.energy.loss(energy.loss.keV, E.MeV.u,
+\usage{AT.lambda.Vavilov.from.energy.loss(energy.loss.keV, E.MeV.u,
  particle.no, material.no, slab.thickness.um)
 }
 \arguments{
@@ -24,5 +29,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L304}
+ss.c#L288}
 }

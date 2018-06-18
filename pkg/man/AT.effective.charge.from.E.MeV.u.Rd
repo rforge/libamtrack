@@ -23,7 +23,7 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_PhysicsR
-outines.c#L149}
+outines.c#L148}
 }
 \examples{
 # Charge pick-up of several nuclids depending on ion energy

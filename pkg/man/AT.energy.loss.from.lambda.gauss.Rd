@@ -1,11 +1,11 @@
-% TODO File path/AT.energy.loss.from.lambda.gauss.Rd
-\name{AT.energy.loss.from.lambda.gauss}
-\alias{AT.energy.loss.from.lambda.gauss}
-\title{AT.energy.loss.from.lambda.gauss}
+% TODO File path/AT.energy.loss.from.lambda.Gauss.Rd
+\name{AT.energy.loss.from.lambda.Gauss}
+\alias{AT.energy.loss.from.lambda.Gauss}
+\title{AT.energy.loss.from.lambda.Gauss}
 \description{Computes the energy loss from the lambda parameter of the
  Gauss distribution for compatibility with CERN W5013
  No effective projectile charge is considered!}
-\usage{AT.energy.loss.from.lambda.gauss(lambda.gauss, E.MeV.u, particle.no,
+\usage{AT.energy.loss.from.lambda.Gauss(lambda.gauss, E.MeV.u, particle.no,
  material.no, slab.thickness.um)
 }
 \arguments{
@@ -25,5 +25,5 @@
 \seealso{
 View the C source code here:
 \url{http://sourceforge.net/apps/trac/libamtrack/browser/trunk/src/AT_EnergyLo
-ss.c#L607}
+ss.c#L374}
 }
